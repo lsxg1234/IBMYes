@@ -1,4 +1,5 @@
 name: IBM Cloud Auto Restart
+
 on:
   push:
     branches: [ master ]
@@ -23,10 +24,9 @@ jobs:
         REGION_NUM: ${{ secrets.REGION_NUM }}
       run: |
         ./IBM_Cloud_CLI/ibmcloud login <<EOF
-        
         $IBM_ACCOUNT
         $REGION_NUM
-        no      
+        no
         EOF
     - name: Target IBM Cloud
       env:
@@ -41,4 +41,4 @@ jobs:
       run: |
         ./IBM_Cloud_CLI/ibmcloud cf restart "$IBM_APP_NAME"
  
- 
+
