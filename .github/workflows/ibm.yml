@@ -8,7 +8,6 @@ on:
   schedule:
     - cron: '0 12 * * FRI'
 
-
 jobs:
   ibm-cloud-restart:
     runs-on: ubuntu-latest
@@ -28,6 +27,7 @@ jobs:
         $IBM_ACCOUNT
         $REGION_NUM
         no
+        
         EOF
     - name: Target IBM Cloud
       env:
